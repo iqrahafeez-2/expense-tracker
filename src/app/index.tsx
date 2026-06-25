@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
   },
 
   heading: {
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: "bold",
     marginBottom: 20,
   },
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
 
   button: {
     backgroundColor: "#007AFF",
-    padding: 12,
+    padding: 14,
     borderRadius: 8,
     marginBottom: 10,
   },
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
   },
 
   total: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: "bold",
     marginTop: 15,
   },
