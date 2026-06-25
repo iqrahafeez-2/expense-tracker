@@ -90,17 +90,20 @@ export default function HomeScreen() {
         style={styles.input}
       />
 
-      <Picker
-        selectedValue={category}
-        onValueChange={(itemValue) => setCategory(itemValue)}
-      >
-        <Picker.Item label="Select Category" value="" />
-        <Picker.Item label="Food" value="Food" />
-        <Picker.Item label="Transport" value="Transport" />
-        <Picker.Item label="Utilities" value="Utilities" />
-        <Picker.Item label="Entertainment" value="Entertainment" />
-        <Picker.Item label="Other" value="Other" />
-      </Picker>
+      <View style={styles.pickerContainer}>
+        <Picker
+          selectedValue={category}
+          onValueChange={(itemValue) => setCategory(itemValue)}
+          style={styles.picker}
+        >
+          <Picker.Item label="Select Category" value="" />
+          <Picker.Item label="Food" value="Food" />
+          <Picker.Item label="Transport" value="Transport" />
+          <Picker.Item label="Utilities" value="Utilities" />
+          <Picker.Item label="Entertainment" value="Entertainment" />
+          <Picker.Item label="Other" value="Other" />
+        </Picker>
+      </View>
 
       <TouchableOpacity style={styles.button} onPress={addExpense}>
         <Text style={styles.buttonText}>Add Expense</Text>
@@ -125,15 +128,14 @@ export default function HomeScreen() {
               </Text>
 
               <Text
-                style={{
-                  backgroundColor: getCategoryColor(
-                    item.category
-                  ),
-                  color: "white",
-                  padding: 4,
-                  marginTop: 4,
-                  borderRadius: 5,
-                }}
+                style={[
+                  styles.categoryBadge,
+                  {
+                    backgroundColor: getCategoryColor(
+                      item.category
+                    ),
+                  },
+                ]}
               >
                 {item.category}
               </Text>
@@ -173,9 +175,23 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
     borderColor: "#ccc",
-    padding: 10,
+    padding: 12,
     marginBottom: 10,
     borderRadius: 8,
+    backgroundColor: "white",
+  },
+
+  pickerContainer: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 8,
+    marginBottom: 10,
+    backgroundColor: "white",
+  },
+
+  picker: {
+    height: 50,
+    width: "100%",
   },
 
   button: {
@@ -189,25 +205,38 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "center",
     fontWeight: "bold",
+    fontSize: 16,
   },
 
   error: {
     color: "red",
     marginBottom: 10,
+    fontWeight: "bold",
   },
 
   expenseItem: {
     borderWidth: 1,
     borderColor: "#ddd",
-    padding: 10,
+    padding: 12,
     marginVertical: 5,
     borderRadius: 8,
     flexDirection: "row",
     justifyContent: "space-between",
+    backgroundColor: "white",
   },
 
   expenseTitle: {
     fontWeight: "bold",
+    fontSize: 16,
+  },
+
+  categoryBadge: {
+    color: "white",
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    marginTop: 4,
+    borderRadius: 5,
+    alignSelf: "flex-start",
   },
 
   delete: {
@@ -218,6 +247,7 @@ const styles = StyleSheet.create({
   total: {
     fontSize: 24,
     fontWeight: "bold",
-    marginTop: 15,
+    marginTop: 20,
+    color: "#007AFF",
   },
 });
