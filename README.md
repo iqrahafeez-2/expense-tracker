@@ -1,6 +1,8 @@
 # Personal Expense Tracker
 
-A React Native Expense Tracker application built using Expo CLI.
+## Project Overview
+
+This application allows users to add, view, and delete personal expenses while tracking the total amount spent. It is developed using React Native and Expo CLI as part of the Friendsware Solutions Summer Internship Program.
 
 ## Features
 
@@ -27,14 +29,18 @@ A React Native Expense Tracker application built using Expo CLI.
 
 ## Run the Project
 
-1. Install dependencies
+### Install dependencies
 
 npm install
 
-2. Start the application
+### Start the application
 
 npx expo start
 
-3. Open in Expo Go or browser
+### Open in browser
 
 npm run web
+
+## Author
+
+Iqra Hafeez
